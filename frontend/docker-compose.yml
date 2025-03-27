@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./
+    container_name: frontend
+    ports:
+      - "9567:9567"
+    networks:
+      - frontend_network
+    depends_on: []
+    extra_hosts:
+      - "backend:34.100.196.170"
+
+networks:
+  frontend_network:
+    driver: bridge
